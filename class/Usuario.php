@@ -145,10 +145,21 @@ $sql->query("UPDATE tb_usuario SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE
 ":LOGIN"=>$this->getDeslogin(),
 ":PASSWORD"=>$this->getDessenha(),
 ":ID"=>$this->getIdusuario()
+));
+}
 
+
+public function delete(){
+$sql = new Sql();
+
+$sql->query("DELETE FROM tb_usuario where idusuario = :ID", array(
+":ID"=>$this->getIdusuario()
 
 ));
-
+$this->setIdusuario(0);
+$this->setDeslogin("");
+$this->setDessenha("");
+$this->setDtcadastro(new Datetime());
 
 }
 

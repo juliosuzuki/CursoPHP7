@@ -49,6 +49,6 @@ $usuario->loadById(15);
 $usuario->delete();
 echo $usuario;
 
-
+echo"Ola mundo!"
 
  ?>
